@@ -11,11 +11,11 @@ camera.lookAt(0,0,0)
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth,window.innerHeight);
-window.onresize=(event)=>{
-    // camera.fov.toPrecision(2,"two")
-    // renderer.setSize(window.innerWidth,window.innerHeight);
-    alert('Refresh the Page to fix the view')
-}
+// window.onresize=(event)=>{
+//     // camera.fov.toPrecision(2,"two")
+//     // renderer.setSize(window.innerWidth,window.innerHeight);
+//     alert('Refresh the Page to fix the view')
+// }
 const light = new THREE.AmbientLight(0xff99ff,10,0x111111);
 // scene.add(light)
 const light1 = new THREE.DirectionalLight(0x888888,1)
@@ -88,9 +88,9 @@ loader.load('./monkee.glb',
         let rounded_loading_perc=Number(loading_perc.toFixed(2));
         console.log(`${loading_perc}% loaded`)
         if(loading_perc!=100){
-            circle.innerHTML=`<div id="loading">${rounded_loading_perc}%</div>`
+            circle.innerHTML=`<div id="loading">Loading ${rounded_loading_perc}%</div>`
         }else{
-            circle.innerHTML=``
+            circle.innerHTML=``;
         }
     },
     (err)=>{
