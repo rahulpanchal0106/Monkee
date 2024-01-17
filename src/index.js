@@ -84,7 +84,14 @@ loader.load('./monkee.glb',
         
     },
     (xhr)=>{
-        console.log(`${xhr.loaded/xhr.total*100}% loaded`)
+        let loading_perc = xhr.loaded/xhr.total*100;
+        let rounded_loading_perc=Number(loading_perc.toFixed(2));
+        console.log(`${loading_perc}% loaded`)
+        if(loading_perc!=100){
+            circle.innerHTML=`<div id="loading">${rounded_loading_perc}%</div>`
+        }else{
+            circle.innerHTML=``
+        }
     },
     (err)=>{
         console.log(err);
