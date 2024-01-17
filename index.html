@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept | Monkee</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0px;
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        
+    }
+    *::-webkit-scrollbar{
+        background-color: rgba(132, 132, 132, 0.66);
+        width: 2px;
+    }
+    *::-webkit-scrollbar-thumb{
+        background-color: rgb(255, 255, 255);
+    }
+    body{
+        overflow:hidden ;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        background-color: black;
+    }
+    #TOP,#BOTTOM{
+        opacity: 0;
+        color: white;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80vw;
+        height: 80svh;
+        font-size: 1.7em;
+        transition: opacity 0.5s cubic-bezier(1, 0.03, 0.57, 0.84);
+        font-weight: 300;
+        
+    }
+    #content{
+        display: flex;
+        flex-direction: row;
+        justify-content:flex-start;
+        height: 100%;
+        width: 100%;
+        font-size: 0.7em;
+        overflow-y: auto;
+    }
+
+    @media only screen and (max-width: 786px){
+        #content{
+            flex-wrap: wrap;
+        }
+    }
+    
+    #TOP h1,#BOTTOM h1{
+        margin-bottom: 60px;
+    }
+    h1:hover ~ #circle{
+        transform: scale(6);
+    }
+    #top-left,#top-right,#bottom-left, #bottom-right{
+        display: flex;
+        justify-content: top;
+        align-items: left;
+        flex-direction: column;
+        padding: 5px 15px;
+    }
+    #circle{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-color: rgba(88, 88, 88, 0.87);
+        border: 1px rgba(128, 128, 128, 0.241) solid;
+        backdrop-filter: blur(0px);
+        border-radius: 50%;
+        transition: width 0.2s cubic-bezier(0, 0, 0.12, 1.5);
+        mix-blend-mode: exclusion;
+    }
+    footer{
+        display: flex;
+        opacity: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        justify-content: center;
+        align-items: center;
+        color: rgb(119, 119, 119);
+        position: fixed;
+        bottom: 0px;
+        padding: 30px 0px;
+        transition: all 0.5s ease-in-out;
+    }
+    #heart{
+        padding: 10px
+    }
+    #myname{
+        text-decoration: underline;
+        color: white;
+        padding: 6px;
+    }
+</style>
+<body>
+    <!-- <h1>Adding things on a plane ground</h1> -->
+    <div id="circle"></div>
+    <div id="output"></div>
+    
+    <div id="TOP">
+        <h1>Monkee</h1>
+        <div id="content">
+            <div id="top-left">
+                <h3>About</h3>
+                <br>
+                <!-- <ul>
+                    <li></li>
+
+                    <li>Here in the about section, The information about your project will take place</li>
+                    <li>The section in right, will contain the tech-stack that was used to make this</li>
+                </ul> -->
+                <p>A landing page concept</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec diam mi, feugiat id tortor quis, ornare sodales purus. In pretium eget ante id ultricies. Pellentesque pharetra ut magna eget porttitor. Etiam porttitor dolor eu sem porttitor molestie. Nullam eu blandit mauris. Ut iaculis posuere pellentesque. Nulla facilisi. Vivamus efficitur vitae lacus non interdum. Ut vulputate pretium lectus ac maximus. Aenean eu mattis tortor, ut ultricies nisi. Duis nisi sem, gravida id orci euismod, fermentum hendrerit ligula.</p>
+                <p></p>
+            </div>
+            <div id="top-right">
+                <h3>Technologies Used</h3>
+                <br>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                    <li>Three.js</li>
+                    <li>Blender</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="BOTTOM">
+        <h1>MONKEE</h1>
+        <div id="content">
+            <div id="bottom-left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec diam mi, feugiat id tortor quis, ornare sodales purus. In pretium eget ante id ultricies. Pellentesque pharetra ut magna eget porttitor. Etiam porttitor dolor eu sem porttitor molestie. Nullam eu blandit mauris. Ut iaculis posuere pellentesque. Nulla facilisi. Vivamus efficitur vitae lacus non interdum. Ut vulputate pretium lectus ac maximus. Aenean eu mattis tortor, ut ultricies nisi. Duis nisi sem, gravida id orci euismod, fermentum hendrerit ligula.
+            </div>
+            <div id="bottom-right">
+                Fusce sodales quam scelerisque velit sagittis, sed mattis elit euismod. Pellentesque leo velit, gravida luctus laoreet vel, fringilla eu eros. Sed viverra nibh sed dolor maximus, sit amet ultricies nulla rutrum. Fusce finibus sit amet tortor ac convallis. Vestibulum facilisis gravida nisl nec fermentum. Sed vestibulum consectetur ornare. Ut faucibus augue nec dolor cursus, in finibus magna dictum. Morbi eu nisl mattis, porttitor ante euismod, sodales tortor. Vivamus fringilla rhoncus nisi ac vehicula. Integer in massa ac nulla suscipit vulputate tempor ut nisl. Integer in fringilla nisi. Praesent mattis laoreet libero, vitae tristique metus varius pellentesque. Fusce interdum sem ante, vel vulputate nisi rutrum ac. Donec sit amet convallis lorem, molestie tristique erosFusce sodales quam scelerisque velit sagittis, sed mattis elit euismod. Pellentesque leo velit, gravida luctus laoreet vel, fringilla eu eros. Sed viverra nibh sed dolor maximus, sit amet ultricies nulla rutrum. Fusce finibus sit amet tortor ac convallis. Vestibulum facilisis gravida nisl nec fermentum. Sed vestibulum consectetur ornare. Ut faucibus augue nec dolor cursus, in finibus magna dictum. Morbi eu nisl mattis, porttitor ante euismod, sodales tortor. Vivamus fringilla rhoncus nisi ac vehicula. Integer in massa ac nulla suscipit vulputate tempor ut nisl. Integer in fringilla nisi. Praesent mattis laoreet libero, vitae tristique metus varius pellentesque. Fusce interdum sem ante, vel vulputate nisi rutrum ac. Donec sit amet convallis lorem, molestie tristique eros..
+            </div>
+            
+        </div>
+    </div>
+
+    <footer>
+        Made with <svg id="heart" style="color:#fafafa" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+            <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+        </svg> by <a id="myname" href="https://www.linkedin.com/in/rahul-panchal-05610824a/"> Rahul Panchal</a>
+    </footer>
+    
+    <script type="module" src="./dist/main.js"></script>
+</body>
+</html>
