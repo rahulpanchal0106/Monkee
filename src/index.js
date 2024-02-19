@@ -10,6 +10,7 @@ camera.position.set(2,10,0);
 camera.lookAt(0,0,0)
 
 const renderer = new THREE.WebGLRenderer();
+renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth,window.innerHeight);
 // window.onresize=(event)=>{
 //     // camera.fov.toPrecision(2,"two")
@@ -91,6 +92,8 @@ loader.load('./monkee.glb',
             circle.innerHTML=`<div id="loading">Loading ${rounded_loading_perc}%</div>`
         }else{
             circle.innerHTML=``;
+            circle.style.width='1px'
+            circle.style.height='1px'
         }
     },
     (err)=>{
